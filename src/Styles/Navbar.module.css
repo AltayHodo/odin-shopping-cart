@@ -1,0 +1,10 @@
+.navbar{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+.link{
+  font-size: 20px;
+}

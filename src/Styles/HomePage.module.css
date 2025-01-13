@@ -1,0 +1,14 @@
+.homepage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.description{
+  font-size: 16px;
+}
