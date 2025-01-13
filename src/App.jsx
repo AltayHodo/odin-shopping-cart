@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './App.css'
+import NavBar from './Components/Navbar'
+import { Outlet } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>shopping card</h1>
+      <h1>E-Commerce Website</h1>
+      <NavBar />
+        <Outlet />
     </>
   )
 }
