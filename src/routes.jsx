@@ -2,6 +2,7 @@ import App from './App';
 import HomePage from './Components/Homepage';
 import Catalog from './Components/Catalog';
 import ShoppingCart from './Components/ShoppingCart';
+import ItemFull from './Components/ItemFull';
 
 const routes = [
   { 
@@ -18,7 +19,11 @@ const routes = [
       },
       {
         path: 'catalog',
-        element: <Catalog />
+        element: <Catalog />,
+      },
+      {
+        path: 'catalog/:id',
+        element: <ItemFull />
       },
       {
         path: 'shopping-cart',

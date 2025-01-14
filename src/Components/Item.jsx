@@ -5,6 +5,7 @@ export default function Item({ title, description, price, image, rating }) {
     <div className={styles.item}>
       <div className={styles.title}>{title}</div>
       <img className={styles.image} src={image} alt={title} />
+      <div>${price}</div>
     </div>
   );
 }
