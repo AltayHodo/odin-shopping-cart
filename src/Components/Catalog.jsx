@@ -1,22 +1,18 @@
 import { useState, useEffect } from 'react';
+import Item from './Item';
+import { useOutletContext } from 'react-router-dom';
 
 export default function Catalog() {
-  const [items, setItems] = useState(null);
+  const items = useOutletContext()
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-        console.log(data);
-        setItems(data.slice(0, 6));
-      } catch (error) {
-        alert('Error fetching items', error);
-      }
-    };
+  if (!items) {
+    return <div>Loading...</div>
+  }
 
-    fetchItems();
-  }, []);
+  return (<div className="catalog">
+    {items.map(item => (
+      <Item key={item.id} item={item} />
+    ))}
 
-  return <div className="catalog">Catalog</div>;
+  </div>);
 }
