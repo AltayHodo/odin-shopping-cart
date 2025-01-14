@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Item from './Item';
 import { useOutletContext } from 'react-router-dom';
+import styles from "../Styles/Catalog.module.css"
+
 
 export default function Catalog() {
   const items = useOutletContext()
@@ -9,9 +11,9 @@ export default function Catalog() {
     return <div>Loading...</div>
   }
 
-  return (<div className="catalog">
+  return (<div className={styles.catalog}>
     {items.map(item => (
-      <Item key={item.id} item={item} />
+      <Item key={item.id} {...item} />
     ))}
 
   </div>);

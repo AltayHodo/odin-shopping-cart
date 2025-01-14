@@ -1,0 +1,7 @@
+.catalog{
+  padding: 0 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 40px;
+  justify-content: center;
+}
