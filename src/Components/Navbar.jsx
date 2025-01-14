@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "../Styles/NavBar.module.css"
+import styles from "../Styles/Navbar.module.css"
 
 export default function NavBar({numItems}) {
   return (
