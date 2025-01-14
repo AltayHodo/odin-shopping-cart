@@ -1,24 +1,38 @@
-.navbar{
+.navbar {
   display: flex;
   justify-content: center;
   gap: 50px;
   padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.link, .shoppingLink{
+.link,
+.shoppingLink {
   font-size: 20px;
-}
-
-.shoppingLink{
+  text-decoration: none;
+  color: #333;
   position: relative;
+  transition: color 0.2s ease;
 }
 
-.number{
+.link:hover,
+.shoppingLink:hover {
+  color: #ff6347;
+}
+
+.number {
   position: absolute;
   color: white;
   background-color: orangered;
   top: -15px;
   right: -18px;
-  padding: 1px 4px; 
+  padding: 1px 6px;
   border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
 }
