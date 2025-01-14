@@ -1,4 +1,4 @@
-import { useParams, useOutletContext } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from '../Styles/ItemFull.module.css';
 import { useState, useEffect } from 'react';
 
