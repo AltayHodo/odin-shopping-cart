@@ -1,5 +1,5 @@
 import App from './App';
-import HomePage from './Components/Homepage';
+import HomePage from './Components/HomePage';
 import Catalog from './Components/Catalog';
 import ShoppingCart from './Components/ShoppingCart';
 import ItemFull from './Components/ItemFull';
