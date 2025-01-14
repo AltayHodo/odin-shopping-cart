@@ -11,7 +11,7 @@ function App() {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
         console.log(data);
-        setItems(data.slice(0, 6));
+        setItems(data.slice(0, 8));
       } catch (error) {
         alert('Error fetching items', error);
       }
