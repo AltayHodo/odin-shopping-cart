@@ -5,6 +5,8 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   const [items, setItems] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -24,7 +26,7 @@ function App() {
     <>
       <h1>E-Commerce Website</h1>
       <NavBar />
-      <Outlet context={items} />
+      <Outlet context={{ items, cartItems, setCartItems }} />
     </>
   );
 }

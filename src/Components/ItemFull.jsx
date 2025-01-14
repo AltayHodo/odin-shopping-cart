@@ -1,10 +1,13 @@
-import { useParams } from 'react-router-dom';
+import { useOutletContext, useParams, useNavigate } from 'react-router-dom';
 import styles from '../Styles/ItemFull.module.css';
 import { useState, useEffect } from 'react';
 
 export default function ItemFull() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+
+  const { cartItems, setCartItems } = useOutletContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchItem() {
@@ -19,6 +22,23 @@ export default function ItemFull() {
     return <div className={styles.itemFull}>Loading...</div>;
   }
 
+  const handleAddToCart = () => {
+    const quantity = parseInt(document.querySelector('#numItems').value);
+    setCartItems((prev) => {
+      const isInCart = prev.find((curItem) => item.id === curItem.id);
+      if (isInCart) {
+        return prev.map((curItem) => {
+          curItem.id == item.id
+            ? { ...curItem, quantity: curItem.quantity + quantity }
+            : curItem;
+        });
+      } else {
+        return [...prev, { ...item, quantity }];
+      }
+    });
+    navigate('/catalog');
+  };
+
   return (
     <div className={styles.itemFull}>
       <div>
@@ -27,8 +47,8 @@ export default function ItemFull() {
       <div className={styles.right}>
         <div className={styles.title}>{item.title}</div>
         <div>${item.price}</div>
-        <input type="number" min="0" max="10" />
-        <button>Add to cart</button>
+        <input id="numItems" type="number" min="1" max="10" defaultValue={1} />
+        <button onClick={handleAddToCart}>Add to cart</button>
       </div>
     </div>
   );

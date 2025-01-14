@@ -5,7 +5,7 @@ import styles from "../Styles/Catalog.module.css"
 
 
 export default function Catalog() {
-  const items = useOutletContext()
+  const {items} = useOutletContext()
   const navigate = useNavigate();
 
   if (!items) {
