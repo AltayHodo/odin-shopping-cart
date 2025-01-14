@@ -13,8 +13,16 @@ export default function ShoppingCart() {
     <div>
       {cartItems.map(item => (
         <div key={item.id}>
-          {item.title}
-          ${item.price}
+          <div>
+            <img src={item.image} alt={item.title} />
+          </div>
+          <div>
+            <span>{item.title}</span>
+            <span>${item.price}</span>
+            <span>Quantity: {item.quantity}</span>
+          </div>
+          
+          
         </div>
       ))}
     </div>

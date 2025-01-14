@@ -22,10 +22,12 @@ function App() {
     fetchItems();
   }, []);
 
+  const numInCart = cartItems.reduce((total, current) => total + current.quantity, 0)
+
   return (
     <>
       <h1>E-Commerce Website</h1>
-      <NavBar />
+      <NavBar numItems={numInCart} />
       <Outlet context={{ items, cartItems, setCartItems }} />
     </>
   );

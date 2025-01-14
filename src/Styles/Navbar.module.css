@@ -5,6 +5,20 @@
   padding: 20px;
 }
 
-.link{
+.link, .shoppingLink{
   font-size: 20px;
+}
+
+.shoppingLink{
+  position: relative;
+}
+
+.number{
+  position: absolute;
+  color: white;
+  background-color: orangered;
+  top: -15px;
+  right: -18px;
+  padding: 1px 4px; 
+  border-radius: 10px;
 }
