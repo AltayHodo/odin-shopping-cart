@@ -7,7 +7,7 @@ export default function ShoppingCart() {
 
 
   if (cartItems.length == 0) {
-    return <div>Shopping cart is empty</div>
+    return <div className={styles.empty}>Shopping cart is empty :(</div>
   }
 
   const totalPrice = cartItems.reduce((total, cur) => total + cur.price * cur.quantity, 0)
